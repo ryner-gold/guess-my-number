@@ -1,26 +1,53 @@
 {
   "compilerOptions": {
+    // Next.js required configurations
     "target": "ES2017",
+    // Specifies which JS version to compile to (ES2017 is well-supported and performant)
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
+    // TypeScript libraries to include (browser + modern JS features)
     "jsx": "preserve",
+    // Preserves JSX for Next.js own processing
+    "module": "esnext",
+    // Use modern JS module system
+    "moduleResolution": "bundler",
+    // How to resolve modules (bundler for Next.js)
+    "paths": {
+      "@/*": ["./src/*"]
+      // Enable absolute imports from src directory
+    },
+    // Type Checking (Industry Standard)
+    "strict": true,
+    // Enable all strict type checking (recommended)
+    "noImplicitAny": true,
+    // Don't allow implicit 'any' types
+    "strictNullChecks": true,
+    // More rigorous null and undefined checking
+    "noUnusedLocals": true,
+    // Report errors on unused variables
+    "noUnusedParameters": true,
+    // Report errors on unused parameters
+
+    // Next.js Build Requirements
+    "allowJs": true,
+    // Allow JavaScript files to be compiled
+    "skipLibCheck": true,
+    // Skip type checking of declaration files
+    "noEmit": true,
+    // Next.js handles emission of files
+    "esModuleInterop": true,
+    // Better interop between different module systems
+    "resolveJsonModule": true,
+    // Allow importing JSON files
+    "isolatedModules": true,
+    // Ensure code is compatible with transpilation
     "incremental": true,
+    // Enable incremental compilation
+
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    ]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
